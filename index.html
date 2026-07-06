@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fotis Mystakopoulos — Open Science outputs</title>
+<style>
+:root{
+  --bg:#faf8f3; --ink:#20242c; --soft:#666e7a; --line:#e3ddd0;
+  --card:#ffffff; --accent:#1a6b54; --accent-soft:#e7f1ec;
+  --gold:#b8842a; --rule:#d6cfc0;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Charter","Iowan Old Style","Palatino Linotype",Georgia,serif;line-height:1.55}
+.mono{font-family:"SF Mono",ui-monospace,Menlo,monospace}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px}
+/* hero */
+.hero{padding:56px 0 34px;border-bottom:2px solid var(--ink)}
+.hero .role{font-family:"SF Mono",monospace;font-size:12px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.hero h1{font-size:44px;line-height:1.05;margin:0 0 10px;font-weight:600;letter-spacing:-.015em}
+.hero .tag{font-size:18px;color:var(--soft);max-width:60ch;margin:0 0 22px}
+.links{display:flex;flex-wrap:wrap;gap:8px;font-size:14px}
+.links a{text-decoration:none;color:var(--ink);border:1px solid var(--line);
+  padding:7px 14px;border-radius:20px;background:var(--card);transition:.15s}
+.links a:hover{border-color:var(--accent);color:var(--accent)}
+/* metric band */
+.band{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:0;
+  border-bottom:1px solid var(--line)}
+.band .m{padding:26px 20px;border-right:1px solid var(--line)}
+.band .m:last-child{border-right:0}
+.band .n{font-family:"SF Mono",monospace;font-size:32px;font-weight:600;line-height:1;color:var(--accent)}
+.band .l{font-size:12.5px;color:var(--soft);margin-top:7px;letter-spacing:.02em}
+/* sections */
+section{padding:44px 0 8px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.sec-head h2{font-size:24px;margin:0;font-weight:600;letter-spacing:-.01em}
+.sec-head .count{font-family:"SF Mono",monospace;font-size:13px;color:var(--soft)}
+.sec-note{font-size:15px;color:var(--soft);margin:0 0 26px;max-width:64ch}
+.collab-badge{display:inline-block;font-family:"SF Mono",monospace;font-size:10px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--gold);
+  border:1px solid var(--gold);border-radius:4px;padding:2px 8px;vertical-align:middle}
+/* project block */
+.proj{margin-bottom:30px}
+.proj-head{display:flex;align-items:baseline;gap:12px;padding-bottom:9px;
+  border-bottom:1.5px solid var(--rule);margin-bottom:4px}
+.proj-head .pn{font-size:17px;font-weight:600}
+.proj-head .pd{font-size:13.5px;color:var(--soft);flex:1}
+.proj-head .pstat{font-family:"SF Mono",monospace;font-size:12px;color:var(--accent);white-space:nowrap}
+/* work row */
+.work{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start;
+  padding:13px 0;border-bottom:1px solid #f0ebe0}
+.work:last-child{border-bottom:0}
+.work .wt{font-size:15.5px;line-height:1.4}
+.work .wt a{color:var(--ink);text-decoration:none;background-image:linear-gradient(var(--accent),var(--accent));
+  background-size:0% 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .25s}
+.work .wt a:hover{background-size:100% 1px;color:var(--accent)}
+.work .meta{font-size:12.5px;color:var(--soft);margin-top:4px}
+.work .meta .yr{font-family:"SF Mono",monospace}
+.work .meta .ty{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:3px;padding:1px 7px;font-size:11px;margin-left:6px}
+.work .eng{text-align:right;white-space:nowrap;font-family:"SF Mono",monospace;font-size:12px;padding-top:2px}
+.work .eng .dl{color:var(--ink);font-weight:600;font-size:15px}
+.work .eng .vw{color:var(--soft);font-size:11.5px;margin-top:2px}
+.work .eng .u{color:var(--soft);font-size:10px}
+/* controls */
+.filter{display:flex;gap:6px;margin:0 0 24px;flex-wrap:wrap}
+.filter button{font-family:inherit;font-size:13px;border:1px solid var(--line);
+  background:var(--card);color:var(--soft);padding:6px 13px;border-radius:18px;cursor:pointer}
+.filter button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+footer{margin:50px 0 40px;padding-top:22px;border-top:1px solid var(--line);
+  font-size:13px;color:var(--soft);line-height:1.7}
+footer a{color:var(--accent)}
+@media(max-width:620px){
+  .hero h1{font-size:33px}.band{grid-template-columns:repeat(2,1fr)}
+  .band .m:nth-child(2){border-right:0}.band .m:nth-child(1),.band .m:nth-child(2){border-bottom:1px solid var(--line)}
+  .work{grid-template-columns:1fr}.work .eng{text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <div class="role">Open Scholarly Communication &middot; Open Science</div>
+    <h1>Fotis Mystakopoulos</h1>
+    <p class="tag">Open Science outputs, sourced live from the public scholarly record. Deliverables, training, and research across European Open Science infrastructure, organised by project and by real usage.</p>
+    <div class="links">
+      <a href="https://orcid.org/0000-0002-9354-3754" target="_blank" rel="noopener">ORCID iD</a>
+      <a href="https://openalex.org/authors/orcid:0000-0002-9354-3754" target="_blank" rel="noopener">OpenAlex</a>
+      <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.identifiers.identifier:0000-0002-9354-3754" target="_blank" rel="noopener">Zenodo</a>
+    </div>
+  </div>
+
+  <div class="band" id="band"></div>
+
+  <section id="authored">
+    <div class="sec-head"><h2>Authored works</h2><span class="count" id="authCount"></span></div>
+    <p class="sec-note">Outputs where I am listed as an author, grouped by project and ordered by downloads within each.</p>
+    <div class="filter" id="authFilter"></div>
+    <div id="authBody"></div>
+  </section>
+
+  <section id="collab">
+    <div class="sec-head"><h2>Collaborations</h2><span class="collab-badge">contributor</span><span class="count" id="collabCount"></span></div>
+    <p class="sec-note">Project work where I contributed as part of a wider team. Same grouping and ordering; distinct from authored outputs above.</p>
+    <div class="filter" id="collabFilter"></div>
+    <div id="collabBody"></div>
+  </section>
+
+  <footer>
+    Metrics are Zenodo view and download counts, retrieved from the public record. Engagement figures reflect usage, not citations, and are typical of Open Science deliverables and training material. Built as a static page; data is embedded and the source list can be refreshed from ORCID, OpenAlex, and Zenodo.
+    <br>Contact via <a href="https://orcid.org/0000-0002-9354-3754" target="_blank" rel="noopener">ORCID</a>.
+  </footer>
+</div>
+
+<script>
+const RECS = [{"title":"Questionnaire for assessing institutional readiness for language-aware assessments","year":"2026","type":"Other","doi":"https://doi.org/10.5281/zenodo.17915564","views":16,"downloads":15,"role":"contributor","project":"COARA"},{"title":"Assessing institutional readiness for language-aware assessments: A focus group report","year":"2026","type":"Report","doi":"https://doi.org/10.5281/zenodo.17915543","views":18,"downloads":11,"role":"contributor","project":"COARA"},{"title":"D5.8 Dissemination, Exploitation, and Communication Strategy report - 1","year":"2026","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.20940715","views":17,"downloads":10,"role":"author","project":"OTHER"},{"title":"D5.5 Report on engagement of researchers 1","year":"2026","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.20940992","views":17,"downloads":6,"role":"author","project":"OTHER"},{"title":"Panel VII | SSH services beyond SSH: how LUMEN's outcomes can improve cross-disciplinary and cross-domain data findability and (re)use","year":"2026","type":"Event","doi":"https://doi.org/10.5281/zenodo.20445187","views":12,"downloads":22,"role":"author","project":"LUMEN"},{"title":"Making meaningful data work together. Exploring interoperability, semantic artefacts, and scalable solutions with ATRIUM and LUMEN","year":"2026","type":"Presentation","doi":"https://doi.org/10.5281/zenodo.20138270","views":108,"downloads":85,"role":"author","project":"LUMEN"},{"title":"Community voices in research assessment: the SSH perspective","year":"2026","type":"Poster","doi":"https://doi.org/10.5281/zenodo.18755376","views":130,"downloads":52,"role":"author","project":"GRASPOS"},{"title":"LUMEN Deliverable 3.2: Use Case Plans and Models","year":"2026","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.18314654","views":108,"downloads":54,"role":"contributor","project":"LUMEN"},{"title":"LUMEN Deliverable 4.2: LUMEN Data Model","year":"2026","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.18244957","views":129,"downloads":85,"role":"contributor","project":"LUMEN"},{"title":"Supplementary Methodology Documentation: Consultation Workshops for Research Assessment Reform in the Social Sciences and Humanities (GraspOS SSH Pilot)","year":"2025","type":"Workflow","doi":"https://doi.org/10.5281/zenodo.17755599","views":46,"downloads":14,"role":"author","project":"GRASPOS"},{"title":"Guidance and recommendations for research assessment in SSH:  Lessons learned in the GraspOS project","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.17951789","views":127,"downloads":97,"role":"author","project":"GRASPOS"},{"title":"Designing Responsible Assessment in SSH: A Checklist","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.17989484","views":102,"downloads":136,"role":"author","project":"GRASPOS"},{"title":"Reclaiming knowledge: why Diamond Open Access matters","year":"2025","type":"Presentation","doi":"https://doi.org/10.5281/zenodo.17964629","views":178,"downloads":135,"role":"contributor","project":"OPERAS"},{"title":"Open Infrastructure in SSH: GoTriple, Metrics and PRISM","year":"2025","type":"Poster","doi":"https://doi.org/10.5281/zenodo.17842869","views":189,"downloads":123,"role":"author","project":"GRASPOS"},{"title":"7th GraspOS Webinar: GoTriple's developments: Knowledge graphs and responsible metrics for SSH assessment","year":"2025","type":"Presentation","doi":"https://doi.org/10.5281/zenodo.17817605","views":176,"downloads":120,"role":"author","project":"GRASPOS"},{"title":"Promising stories from the GraspOS Pilot studies","year":"2025","type":"Publication","doi":"https://doi.org/10.5281/zenodo.17789961","views":400,"downloads":230,"role":"contributor","project":"GRASPOS"},{"title":"Community voices in research assessment: insights from the SSH Pilot","year":"2025","type":"Presentation","doi":"https://doi.org/10.5281/zenodo.17692913","views":72,"downloads":50,"role":"contributor","project":"GRASPOS"},{"title":"Review report on extended abstract titled \"A methodological approach to modelling career progression assessment: toward comparative analysis and service design\"","year":"2025","type":"Peer review","doi":"https://doi.org/10.5281/zenodo.17672600","views":33,"downloads":16,"role":"author","project":"GRASPOS"},{"title":"GraspOS Deliverable D3.3: Tools and services","year":"2025","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.17659808","views":90,"downloads":58,"role":"author","project":"GRASPOS"},{"title":"GraspOS Deliverable D4.5 \"Federated Open Infrastructure (FOMI)\"","year":"2025","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.17339531","views":76,"downloads":42,"role":"author","project":"GRASPOS"},{"title":"GraspOS SCOPE+i Resource: Institutional assessment process checklist","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.15526008","views":113,"downloads":205,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS SCOPE+i Resource: Indicators guide 1: Responsible use of indicators","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.15526168","views":72,"downloads":95,"role":"contributor","project":"GRASPOS"},{"title":"SSH Narrative CV Template - GraspOS Project","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.17433636","views":252,"downloads":137,"role":"author","project":"GRASPOS"},{"title":"GraspOS SCOPE+i Resource: Stakeholder mapping template","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.15525686","views":73,"downloads":180,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS SCOPE+i Resource:  Guide for evaluating the assessment process","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.15526189","views":55,"downloads":138,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS SCOPE+i Resource: Guide on equity, diversity and inclusion (EDI) in research assessment","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.15526122","views":99,"downloads":72,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS SCOPE+i Resource: Guide on the diversity of OS contributions, roles and activities","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.15526089","views":78,"downloads":74,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS SCOPE+i Resource: Guide on principles for responsible research assessment for evaluators and evaluands","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.15526025","views":47,"downloads":46,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS SCOPE+i Resource: Guide on promoting OS contributions in a narrative CV","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.15525987","views":63,"downloads":56,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS SCOPE+i Resource: Guide for overcoming common obstacles in implementing RRA","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.15526054","views":68,"downloads":56,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS SCOPE+i Resource: Guide on choosing an assessment method","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.15525721","views":51,"downloads":134,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS SCOPE+i Resource: Open Science assessment guide","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.15525630","views":93,"downloads":154,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS SCOPE+i Resource: Guide for assembling an assessment team","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.15525548","views":80,"downloads":129,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS SCOPE+i Resource: Purpose and context statement template","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.15525469","views":54,"downloads":137,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS SCOPE+i Resource: Assessment readiness template","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.15525577","views":78,"downloads":108,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS SCOPE+i Resource: Value statement template","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.15524532","views":46,"downloads":132,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS SCOPE+i Resource: Checklist for responsible research assessment","year":"2025","type":"Other","doi":"https://doi.org/10.5281/zenodo.15524455","views":57,"downloads":138,"role":"contributor","project":"GRASPOS"},{"title":"Open Science & Evidence-Informed Decision Making: Lessons Learned","year":"2025","type":"Publication","doi":"https://doi.org/10.5281/zenodo.17347435","views":152,"downloads":98,"role":"author","project":"SKILLS4EOSC"},{"title":"GraspOS Resource Metadata Schema","year":"2025","type":"Report","doi":"https://doi.org/10.5281/zenodo.17240299","views":150,"downloads":188,"role":"author","project":"GRASPOS"},{"title":"Diamond Open Access - EC Policy Brief","year":"2025","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.17176307","views":118,"downloads":57,"role":"author","project":"OPERAS"},{"title":"Advancing responsible research assessment with open, community-governed infrastructures - EC Policy Brief","year":"2025","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.17174454","views":106,"downloads":51,"role":"author","project":"OPERAS"},{"title":"Deliverable 5.3: Pilot findings and progress report","year":"2025","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.17035609","views":256,"downloads":158,"role":"contributor","project":"GRASPOS"},{"title":"D5.6 Recommendations for the set-up of Open Science and Research Data Management thematic trainings","year":"2025","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.16992361","views":225,"downloads":121,"role":"author","project":"SKILLS4EOSC"},{"title":"D3.2 Evidence-based policy and Public Administration training final report","year":"2025","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.16992250","views":185,"downloads":161,"role":"contributor","project":"SKILLS4EOSC"},{"title":"Open Science and Evidence-Informed Decision-Making TtT Training Course 7: \"Implementing Open Science Policies\"","year":"2025","type":"Lesson","doi":"https://doi.org/10.5281/zenodo.16948408","views":109,"downloads":15,"role":"author","project":"SKILLS4EOSC"},{"title":"Open Science and Evidence-Informed Decision-Making TtT Training Course 6: \"Open Science Policies support Open Science Practices\"","year":"2025","type":"Lesson","doi":"https://doi.org/10.5281/zenodo.16948404","views":135,"downloads":18,"role":"author","project":"SKILLS4EOSC"},{"title":"LUMEN Deliverable 8.2 \"Communication and Dissemination Plan\"","year":"2025","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.16418145","views":147,"downloads":70,"role":"author","project":"LUMEN"},{"title":"ALMASI D5.3 - Dissemination, Exploitation and Communication Strategy","year":"2025","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.15797456","views":204,"downloads":208,"role":"contributor","project":"ALMASI"},{"title":"LUMEN Deliverable 4.1: LUMEN Data Mesh Architecture Framework","year":"2025","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.15752126","views":461,"downloads":316,"role":"contributor","project":"LUMEN"},{"title":"Deliverable D4.4 Training report including training materials","year":"2025","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.15433205","views":422,"downloads":2300,"role":"contributor","project":"DIAMAS"},{"title":"4th Webinar of GraspOS: Research Assessment in Transition - Open Infrastructures, Policy, and Diamond Open Access","year":"2025","type":"Presentation","doi":"https://doi.org/10.5281/zenodo.15516543","views":304,"downloads":1276,"role":"contributor","project":"GRASPOS"},{"title":"MS5.6 Report: ELSI requirements for RI professionals & thematic communities","year":"2025","type":"Project milestone","doi":"https://doi.org/10.5281/zenodo.15299344","views":206,"downloads":160,"role":"contributor","project":"SKILLS4EOSC"},{"title":"FAIR-IMPACT Workshop, example of two national initiatives: The Netherlands and Greece","year":"2025","type":"Presentation","doi":"https://doi.org/10.5281/zenodo.15045110","views":150,"downloads":123,"role":"author","project":"FAIR-IMPACT"},{"title":"D8.2 Skills4EOSC Advocacy kit","year":"2024","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.14800394","views":604,"downloads":475,"role":"author","project":"SKILLS4EOSC"},{"title":"D5.2 OS and RDM learning paths for Social Sciences and Humanities communities","year":"2024","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.14797210","views":507,"downloads":388,"role":"author","project":"SKILLS4EOSC"},{"title":"Science4Policy Kit for Competence Centres","year":"2025","type":"Publication","doi":"https://doi.org/10.5281/zenodo.14751412","views":976,"downloads":828,"role":"author","project":"SKILLS4EOSC"},{"title":"Towards Open Infrastructures for Research Assessment","year":"2025","type":"Presentation","doi":"https://doi.org/10.5281/zenodo.14609139","views":90,"downloads":158,"role":"author","project":"OPERAS"},{"title":"Science4Policy Kit - Survey Responses (Public Dataset)","year":"2024","type":"Dataset","doi":"https://doi.org/10.5281/zenodo.14275894","views":109,"downloads":298,"role":"author","project":"OTHER"},{"title":"D3.4 Science4Policy Kit for Competence Centres","year":"2024","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.14538239","views":369,"downloads":181,"role":"author","project":"SKILLS4EOSC"},{"title":"OPERAS CoARA Action Plan","year":"2024","type":"Other","doi":"https://doi.org/10.5281/zenodo.14267997","views":701,"downloads":587,"role":"contributor","project":"OPERAS"},{"title":"4th Training Session of GraspOS: Leveraging OPERAS Metrics: showing the impact of Open Access books","year":"2024","type":"Presentation","doi":"https://doi.org/10.5281/zenodo.14228177","views":301,"downloads":227,"role":"author","project":"GRASPOS"},{"title":"FAIR-IMPACT National Roadshow in Greece - Implementing FAIR principles: Tools, Infrastructure and Guidelines and the Greek Horizon","year":"2024","type":"Presentation","doi":"https://doi.org/10.5281/zenodo.14198233","views":241,"downloads":866,"role":"author","project":"FAIR-IMPACT"},{"title":"GraspOS Deliverable D4.2: Infrastructure Architecture","year":"2024","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.14162659","views":708,"downloads":472,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS Deliverable D5.2: Pilot findings and progress report","year":"2024","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.13629147","views":905,"downloads":395,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS Deliverable D3.2: Tools and services","year":"2024","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.13619176","views":344,"downloads":228,"role":"author","project":"GRASPOS"},{"title":"Contextualising Research Assessment for Social Sciences and Humanities: Insights and Challenges from the GraspOS Project Pilot","year":"2024","type":"Presentation","doi":"https://doi.org/10.5281/zenodo.12168827","views":69,"downloads":54,"role":"author","project":"GRASPOS"},{"title":"Training design as a workflow: producing adaptable and reusable learning pathways for Arts and Humanities","year":"2024","type":"Poster","doi":"https://doi.org/10.5281/zenodo.12078139","views":109,"downloads":87,"role":"author","project":"OPERAS"},{"title":"Advocacy for Responsible Research Assessment for the Social Sciences and Humanities","year":"2024","type":"Workflow","doi":"https://doi.org/10.5281/zenodo.11669021","views":313,"downloads":406,"role":"contributor","project":"OPERAS"},{"title":"GraspOS Webinar Assessing Open Access Books: Shedding Light on Peer Review with PRISM","year":"2024","type":"Presentation","doi":"https://doi.org/10.5281/zenodo.11196021","views":352,"downloads":338,"role":"author","project":"GRASPOS"},{"title":"Reforma da avaliação da investigação: perceções e desafios no âmbito do projeto GraspOS","year":"2024","type":"Presentation","doi":"https://doi.org/10.5281/zenodo.11175504","views":170,"downloads":109,"role":"contributor","project":"GRASPOS"},{"title":"Contextualising Research Assessment for Social Sciences and Humanities: Insights and Challenges from the GraspOS Project Pilot","year":"2024","type":"Presentation","doi":"https://doi.org/10.5281/zenodo.11071150","views":336,"downloads":316,"role":"author","project":"GRASPOS"},{"title":"GraspOS Deliverable 5.1 \"Report on pilot setup, current practices and initial requirements\"","year":"2023","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.11091718","views":535,"downloads":327,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS Deliverable 3.1 \"Tools and services landscape report\"","year":"2023","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.11091567","views":1009,"downloads":849,"role":"contributor","project":"GRASPOS"},{"title":"GraspOS Deliverable 2.2 \"OSAF\"","year":"2023","type":"Project deliverable","doi":"https://doi.org/10.5281/zenodo.11091512","views":1324,"downloads":1071,"role":"contributor","project":"GRASPOS"},{"title":"Pathways for Sustainable Open Science: Outputs and Synergies Across DIAMAS, Skills4EOSC and GraspOS","year":"2024","type":"Poster","doi":"https://doi.org/10.5281/zenodo.10958520","views":411,"downloads":187,"role":"author","project":"GRASPOS"},{"title":"The role of Open Science in fostering a more inclusive research assessment process in Social Sciences and Humanities","year":"2024","type":"Presentation","doi":"https://doi.org/10.5281/zenodo.10562683","views":891,"downloads":482,"role":"author","project":"GRASPOS"},{"title":"Data Management Plan: training material for data management (Horizon Europe project)","year":"2022","type":"Lesson","doi":"https://doi.org/10.5281/zenodo.7082142","views":424,"downloads":157,"role":"author","project":"OTHER"}];
+const PM = {"GRASPOS": ["GraspOS", "Responsible research assessment infrastructure"], "SKILLS4EOSC": ["Skills4EOSC", "Open Science skills and training"], "OPERAS": ["OPERAS", "Open scholarly communication in SSH"], "FAIR-IMPACT": ["FAIR-IMPACT", "Realising FAIR data practice"], "LUMEN": ["LUMEN", "SSH research infrastructure"], "DIAMAS": ["DIAMAS", "Diamond Open Access publishing"], "ALMASI": ["ALMASI", "Diamond OA in the arts & humanities"], "COARA": ["CoARA", "Coalition for Advancing Research Assessment"], "OTHER": ["Other outputs", "Standalone deliverables & datasets"]};
+const PORDER = ['GRASPOS','SKILLS4EOSC','OPERAS','FAIR-IMPACT','LUMEN','DIAMAS','ALMASI','COARA','OTHER'];
+const fmt = n => n.toLocaleString('en-GB');
+
+// metric band
+(function(){
+  const dl=RECS.reduce((s,r)=>s+r.downloads,0), vw=RECS.reduce((s,r)=>s+r.views,0);
+  const auth=RECS.filter(r=>r.role==='author').length;
+  const projs=new Set(RECS.map(r=>r.project)).size;
+  document.getElementById('band').innerHTML=[
+    [fmt(dl),'total downloads'],[fmt(vw),'total views'],
+    [auth+' + '+(RECS.length-auth),'authored + contributed'],[projs,'projects']
+  ].map(([n,l])=>`<div class="m"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
+})();
+
+function projectsFor(role){
+  const set=RECS.filter(r=>r.role===role);
+  const by={};
+  set.forEach(r=>{(by[r.project]=by[r.project]||[]).push(r);});
+  return PORDER.filter(p=>by[p]).map(p=>({key:p,recs:by[p].sort((a,b)=>b.downloads-a.downloads)}));
+}
+
+function renderWork(r){
+  const t = r.doi ? `<a href="${r.doi}" target="_blank" rel="noopener">${r.title}</a>` : r.title;
+  return `<div class="work">
+    <div><div class="wt">${t}</div>
+      <div class="meta"><span class="yr">${r.year}</span><span class="ty">${r.type}</span></div></div>
+    <div class="eng"><div class="dl">${fmt(r.downloads)}<span class="u"> dl</span></div>
+      <div class="vw">${fmt(r.views)} views</div></div>
+  </div>`;
+}
+
+function renderSection(role, bodyId, filterId, countId){
+  const groups=projectsFor(role);
+  const total=RECS.filter(r=>r.role===role).length;
+  document.getElementById(countId).textContent=total+' outputs';
+  // filter chips
+  const fb=document.getElementById(filterId);
+  fb.innerHTML=`<button class="on" data-p="ALL">All projects</button>`+
+    groups.map(g=>`<button data-p="${g.key}">${PM[g.key][0]}</button>`).join('');
+  const body=document.getElementById(bodyId);
+  function draw(filter){
+    const show=filter==='ALL'?groups:groups.filter(g=>g.key===filter);
+    body.innerHTML=show.map(g=>{
+      const dl=g.recs.reduce((s,r)=>s+r.downloads,0);
+      return `<div class="proj">
+        <div class="proj-head"><span class="pn">${PM[g.key][0]}</span>
+          <span class="pd">${PM[g.key][1]}</span>
+          <span class="pstat">${g.recs.length} &middot; ${fmt(dl)} dl</span></div>
+        ${g.recs.map(renderWork).join('')}</div>`;
+    }).join('');
+  }
+  fb.addEventListener('click',e=>{
+    if(!e.target.dataset.p)return;
+    [...fb.children].forEach(b=>b.classList.toggle('on',b===e.target));
+    draw(e.target.dataset.p);
+  });
+  draw('ALL');
+}
+
+renderSection('author','authBody','authFilter','authCount');
+renderSection('contributor','collabBody','collabFilter','collabCount');
+</script>
+</body>
+</html>
